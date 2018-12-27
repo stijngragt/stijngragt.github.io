@@ -1,0 +1,472 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del,
+dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup,
+tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form,
+label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby, section,
+summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Einde CSS Reset */
+
+/*============
+main stylesz
+=============*/
+
+a {
+    color: #000;
+    text-decoration: none;
+    font-size: 4em;
+}
+
+a {
+    font-size: 1em
+}
+
+li {
+    list-style-type: none;
+}
+h1 {
+font-family: Montserrat, sans-serif;
+font-weight: 700;
+font-size: 5rem;
+color: grey;
+margin: 1.5em .5em 1.5em;
+display: inline-block;
+}
+/*=====================
+Grid voor detail pagina
+=======================*/
+
+html,
+body {
+    width: 100vw;
+/*    min-height: 100vh; */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template: 1fr / .5fr 4fr;
+}
+
+/* Sidebar */
+body>div {
+    background-color: #FFD300;
+    font-family: Oswald, sans-serif;
+    text-transform: uppercase;
+}
+
+body div>span {
+    display: block;
+    font-size: 3em;
+    font-weight: 900;
+    transform: rotate(-90deg);
+}
+
+body div span span {
+    display: block;
+    font-size: 1rem;
+}
+
+/* Hamburger menu */
+.sidebar_nav {
+    display: block;
+    color: #fff;
+    position: relative;
+    top: 35%;
+    margin-left: 5em;
+    margin-right: 3em;
+}
+
+
+/*==========
+Main hamburger menu
+============*/
+
+.menu {
+    display: block;
+}
+
+.menu > label {
+    border-radius: .2em;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 100;
+/*    transition: all 0.55s; */
+    font-size: 4em;
+}
+
+.menu > label:hover {
+    transform: scale(.97);
+}
+
+.menu_overlay {
+    background: #000000;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    z-index: 600;
+}
+
+.menu_wrap {
+    padding: 1em 0;
+    position: relative;
+    margin: 0 auto;
+    max-width: 31.25rem;
+    width: 90%;
+}
+
+.menu_wrap label {
+    background: #FFD300;
+    border-radius: 50%;
+    color: #000000;
+    cursor: pointer;
+    display: block;
+    height: 1.5em;
+    line-height: 1.5;
+    position: absolute;
+    right: .5em;
+    width: 1.5em;
+}
+
+.menu_wrap label:focus,
+.menu_wrap label:hover {
+    transform: scale(1.1);
+}
+
+.menu_wrap label:active {
+    transform: scale(.9);
+}
+
+
+.menu_wrap h2 {
+    color: #FFD300;
+    margin-top: .5em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.menu_wrap div nav a {
+    outline: none;
+    line-height: 1;
+    color: #FFD300;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+/* Menu animatie start */
+
+.menu_wrap nav {
+    position: relative;
+    z-index: 10;
+}
+
+.menu_item {
+    position: relative;
+    display: block;
+    outline: none;
+    line-height: 1;
+}
+
+.menu_item_name {
+    position: relative;
+    display: inline-block;
+}
+
+.menu_wrap nav .menu_item_name {
+    transition: color .5s;
+    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+}
+
+.menu_wrap nav .menu_item_name::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    bottom: 0;
+    opacity: .7;
+    transform: scale3d(0,1,1);
+    transform-origin: 0% 50%;
+    transition: transform .5s;
+    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+}
+
+.menu_wrap nav .menu_item .menu_item_name::before {
+    background: #FFF;
+}
+
+.menu_wrap nav .menu_item:hover,
+.menu_wrap nav .menu_item:focus {
+    color: #FFF;
+}
+.menu_wrap nav .menu_item:active {
+    transform: scale(.9);
+}
+
+.menu_wrap nav .menu_item:hover .menu_item_name::before,
+.menu_wrap nav .menu_item:focus .menu_item_name::before {
+    transform: scale3d(1,1,1);
+}
+/* Animatie menu end hereeee */
+
+.menu_wrap div li {
+    padding-bottom: 1em;
+}
+
+.menu #menu_trigger:focus ~ label {
+    transform: scale(0.97);
+}
+
+#menu_trigger {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+
+.menu_overlay {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -100;
+}
+
+#menu_trigger:checked ~ .menu_overlay {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 800;
+}
+
+/* ===============
+Content deel, TEXT
+==================*/
+
+.SS_form {
+    padding: 1.5em;
+    background-color: #FFF;
+}
+
+/* Social media links START */
+
+.SS_form > div:first-of-type {
+    margin-bottom: 3rem;
+}
+
+.SS_form div a {
+    font-size: 1em;
+    color: gray;
+    margin: 2.3rem;
+    line-height: 1.4;
+}
+
+.social_menu {
+    position: relative;
+    z-index: 10;
+}
+
+.social_menu_item {
+    position: relative;
+    outline: none;
+    line-height: 1;
+}
+
+.social_menu_item_label {
+    position: relative;
+    display: inline-block;
+}
+
+.social_menu .social_menu_item_label {
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transform: translate3d(-0.5em,0,0);
+    transition: transform .5s, color .5s;
+    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+}
+
+.social_menu .social_menu_item_label::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 2px;
+    left: 0.05em;
+    top: 1.25em;
+    opacity: .9;
+    transform: scale3d(0,1,1);
+    transform-origin: 100% 50%;
+    transition: transform .5s;
+    transition-timing-function: cubic-bezier(0.2,1,0.3,1);
+}
+
+.social_menu .social_menu_item .social_menu_item_label::before {
+    background: #FFD300;
+}
+
+.social_menu .social_menu_item:hover,
+.social_menu .social_menu_item:focus {
+    color: #FFD300;
+}
+
+.social_menu .social_menu_item_label:active {
+    color: #000;
+}
+
+.social_menu .social_menu_item:hover .social_menu_item_label::before,
+.social_menu .social_menu_item:focus .social_menu_item_label::before {
+    transform: scale3d(1,1,1);
+}
+
+.social_menu .social_menu_item:hover .social_menu_item_label,
+.social_menu .social_menu_item:focus .social_menu_item_label {
+    transform: translate3d(0,0,0);
+}
+
+.social_menu .social_menu_item:hover .social_menu_item_label::before,
+.social_menu .social_menu_item:focus .social_menu_item_label::before {
+    transition-timing-function: ease;
+    transform-origin: 0% 50%;
+}
+
+/* Social Media links END */
+
+/*=================
+Begin van de simpsomnia applet
+=================*/
+svg { /* fix SVG size and placement */
+  display: none;
+}
+.simpsomnia_app {
+  display: block;
+}
+
+form {
+  margin-left: 1.5em;
+}
+
+.SS_form label {
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  display: block;
+}
+
+
+/* First step (name) */
+
+.SS_step1 input {
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  outline: none;
+  width: auto;
+  min-width: 27%;
+  font-size: 2rem;
+  line-height: 3rem;
+  border-bottom: 5px solid #FFD300;
+  background-color: transparent;
+  margin-top: 1em;
+  text-align: center;
+}
+
+.SS_step1 button {
+  margin-top: 5rem;
+  background-color: #FFD300;
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-decoration: none;
+  user-select: none;
+  letter-spacing: 1px;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  transition: all .1s ease-out;
+  border: none;
+}
+
+.SS_step1 button:hover {
+  animation: hue-rotate 10s linear infinite;
+}
+.SS_step1 button:active {
+  transform: scale(.95);
+}
+
+@keyframes hue-rotate {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+.SS_form form .SS_step2 {
+  display: none;
+  font-size: 1rem;
+}
+
+.SS_form form .SS_step3 {
+display: none;
+  font-size: 1rem;
+}
+
+.SS_form form .SS_step4 {
+  display: none;
+  font-size: 1rem;
+}
