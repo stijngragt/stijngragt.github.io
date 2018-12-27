@@ -45,10 +45,10 @@
 <div class="tab SS_step1">
   <label for="SS_name">What is your name?</label>
   <input type="text" id="SS_name" placeholder="Name">
-  <button type="submit">Next</button>
+
 </div>
-<!--<div class="tab SS_step2">
-<span>Where are you?</span>
+<div class="tab SS_step2">
+<h2>Where are you?</h2>
 <label for="SS_season">Season:</label>
 <input type="text" id="SS_season">
 <label for="SS_episode">Episode:</label>
@@ -107,7 +107,14 @@
     <input type="radio" name="radio" id="SS2">
     <input type="radio" name="radio" id="SS2">
   </section>
-</div> -->
+</div>
+<div class="tab SS_step5">
+<p>
+  results and stuff
+</p>
+</div>
+  <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+  <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
   </form>
 
 </div>
@@ -118,6 +125,6 @@
 
 
 </div>
-<script src="./js/script.js"></script>
+<script src="./js/form.js"></script>
 </body>
 </html>

@@ -421,7 +421,7 @@ form {
   text-align: center;
 }
 
-.SS_step1 button {
+.simpsomnia_app button {
   margin-top: 5rem;
   background-color: #FFD300;
   color: #000;
@@ -445,7 +445,9 @@ form {
 }
 
 
-
+.tab {
+  display: none;
+}
 
 
 
