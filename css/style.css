@@ -382,13 +382,16 @@ Begin van de simpsomnia applet
 =================*/
 
 .SS_logo {
-  width: 50%;
   margin: 3rem .5em 1rem;
   display: block;
 }
 
-
-
+.SS_homer {
+  position: fixed;
+  display: none;
+  width: 85%;
+  top: 60%;
+}
 
 .simpsomnia_app {
   display: block;
@@ -493,52 +496,71 @@ h2 {
 }
 
 
-.rating {
-  display: inline;
-}
-
-
-.rating label {
-  height: 40px;
-  width: 100%;
-  display: inline;
+.rating fieldset {
   position: relative;
-  cursor: pointer;
-  margin-right: 5rem;
-  transform: rotate(180deg);
-}
-
-.rating label:after {
-  position: absolute;
-  content: "☆";
-  color: #444;
   display: inline-block;
-  text-align: center;
-  font-size: 80px;
-}
-
-.rating label:hover::after {
-  color: #5E5E5E;
+  border: none;
+  font-size: 14px;
+  margin: 50px auto;
+  transition: translateX(-50%);
 }
 
 .rating input {
-  display: none;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  clip rect(1px 1px 1px 1px);
+  clip rect(1px, 1px, 1px, 1px);
+  opacity: 0;
 }
 
-.rating input:checked + label:after,
-.rating input:checked ~ label:after {
-  content: "★";
-  color: gold;
+.rating label {
+  position: relative;
+  float: right;
+  color: #C8C8C8;
+}
 
+.rating label:before {
+  margin: 5px;
+  content: "\f005";
+  font-family: FontAwesome;
+  display: inline-block;
+  font-size: 1.5em;
+  color: #CCC;
+  user-select: none;
+}
 
+.rating input:checked ~ label:before {
+  color: #FFC107;
+}
+
+.rating label:hover ~ label:before {
+  color: #FFDB70;
+}
+
+.rating label:hover:before {
+  color: #FFC107;
 }
 
 
+/* Step 4 - favorite toon */
 
+.fav_toon label {
+  width: 10%;
 
+}
 
+.fav_toon label:hover {
+  border: 3px solid #FF0000;
+}
 
-
+.fav_toon input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
 
 
