@@ -468,7 +468,7 @@ h2 {
 
 
 .simpsomnia_app button {
-  margin-top: 5rem;
+  margin-top: 2rem;
   background-color: #FFD300;
   color: #000;
   font-family: 'Montserrat', sans-serif;
@@ -501,7 +501,7 @@ h2 {
   display: inline-block;
   border: none;
   font-size: 14px;
-  margin: 50px auto;
+  margin: 20px auto;
   transition: translateX(-50%);
 }
 
@@ -549,11 +549,16 @@ h2 {
 
 .fav_toon label {
   width: 10%;
+  display: inline-block;
+  margin-top: 1rem;
 
 }
 
 .fav_toon label:hover {
-  border: 3px solid #FF0000;
+  transform: scale(.95);
+}\
+.fav_toon label:active {
+  transform: scale(.75);
 }
 
 .fav_toon input {
